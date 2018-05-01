@@ -22,11 +22,11 @@ cd "$dir_under_source_control" || exit
 # Format: YYYY-MM-DD_HH-mm-ss
 time_of_backup=$(date +%x_%H-%M-%S)
 
-# Get the latest commit hash
-latest_sha=$(git log | head -n1 | sed 's/^commit //')
-
 # This will be the branch name AND the commit message on that branch
 save_message="Saved_state_from_$time_of_backup"
+
+# Get the latest commit hash
+latest_sha=$(git log | head -n1 | sed 's/^commit //')
 
 # To be able to switch back to it after saving the current work on a different branch
 current_branch=$(git rev-parse --abbrev-ref HEAD)
@@ -53,6 +53,6 @@ git reset --hard "$latest_sha"
 # Free up the variable names
 unset dir_under_source_control
 unset time_of_backup
-unset latest_sha
 unset save_message
+unset latest_sha
 unset current_branch
