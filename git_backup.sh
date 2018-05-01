@@ -2,8 +2,9 @@
 #
 # Author: Simon Rydell
 # Date: 1 May 2018
+# Input: Path to a directory under git source control
 #
-# Store backup of directory $1 on server using git.
+# Store backup of directory on remote server using git.
 # Backups are stored in a private git repository
 
 # Check that input is a directory

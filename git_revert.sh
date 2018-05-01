@@ -2,9 +2,10 @@
 #
 # Author: Simon Rydell
 # Date: 1 May 2018
+# Input: Path to a directory under git source control
 #
-# Restore latest backup of directory $1 from local using git.
-# Backups are stored in a private git repository
+# Save current directory structure to a time stamped branch.
+# Restore latest backup of directory from local using git.
 
 # Check that input is a directory
 if [ -d "$1" ]; then
