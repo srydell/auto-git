@@ -6,15 +6,24 @@
 # Restore backup of directory ~/Dokument/Forskning using git.
 # Backups are stored in a private git repository
 
-# Change to the right directory
-cd "$HOME/Dokument/Forskning" || exit
+# Check that there is only one input
+# and that it is a directory
+if [ -d "$1" ]; then
+	dir_under_source_control="$1"
+else
+	printf "Input was not a directory. Given: %s" "$1"
+	exit 1
+fi
 
-# Get the latest commit hash
-latest_sha=$(git log | head -n1 | sed 's/^commit //')
+# Change to the right directory
+cd "$dir_under_source_control" || exit
 
 # Get the current time
 # Format: YYYY-MM-DD_HH-mm-ss
 time_of_backup=$(date +%x_%H-%M-%S)
+
+# Get the latest commit hash
+latest_sha=$(git log | head -n1 | sed 's/^commit //')
 
 # This will be the branch name AND the commit message on that branch
 save_message="Saved_state_from_$time_of_backup"
