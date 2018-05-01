@@ -9,10 +9,11 @@
 # Log the time of the push
 TIMEOFBACKUP=$(date +%c)
 
+# Change to the right directory
+cd $HOME/Dokument/Forskning
+
 if [[ "$(git status --porcelain)" ]]; then
     # Changes have been made
-    # Change to the right directory
-    cd $HOME/Dokument/Forskning
 
     # Add the changed files
     git add .
