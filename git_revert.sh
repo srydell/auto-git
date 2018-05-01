@@ -3,11 +3,10 @@
 # Author: Simon Rydell
 # Date: 1 May 2018
 #
-# Restore backup of directory ~/Dokument/Forskning using git.
+# Restore backup of directory in $1 using git.
 # Backups are stored in a private git repository
 
-# Check that there is only one input
-# and that it is a directory
+# Check that input is a directory
 if [ -d "$1" ]; then
 	dir_under_source_control="$1"
 else

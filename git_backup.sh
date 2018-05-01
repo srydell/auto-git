@@ -6,8 +6,7 @@
 # Store backup of directory in $1 using git.
 # Backups are stored in a private git repository
 
-# Check that there is only one input
-# and that it is a directory
+# Check that input is a directory
 if [ -d "$1" ]; then
 	dir_under_source_control="$1"
 else
@@ -19,6 +18,8 @@ fi
 cd "$dir_under_source_control" || exit
 
 # Log the time of the push
+# Format depends on locale
+# Example: tis 1 maj 2018 16:15:49
 time_of_backup=$(date +%c)
 
 if [[ "$(git status --porcelain)" ]]; then
