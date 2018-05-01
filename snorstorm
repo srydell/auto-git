@@ -36,7 +36,7 @@ git checkout master
 # Revert back to the latest commit before save. 
 # NOTE: On its own this is dangerous,
 #	here it's safe since we trust the previous save
-git reset --hard $latest_sha
+git reset --hard "$latest_sha"
 
 # Free up the variable names
 unset time_of_backup
