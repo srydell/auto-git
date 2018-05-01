@@ -26,10 +26,11 @@ time_of_backup=$(date +%x_%H-%M-%S)
 save_message="Saved_state_from_$time_of_backup"
 
 # Get the latest commit hash
+# NOTE: Not future proof, depends on formatting of `git log`
 latest_sha=$(git log | head -n1 | sed 's/^commit //')
 
 # To be able to switch back to it after saving the current work on a different branch
-current_branch=$(git rev-parse --abbrev-ref HEAD)
+head_branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Create a branch where we will save what we want to revert from
 # It is garanteed to be unique due to $time_of_backup
@@ -42,8 +43,8 @@ git commit -m "$save_message"
 # Push our saved state
 git push --set-upstream origin "$save_message"
 
-# Go back to master branch
-git checkout "$current_branch"
+# Go back to the branch we started on
+git checkout "$head_branch"
 
 # Revert back to the latest commit before save. 
 # NOTE: On its own this is dangerous,
@@ -55,4 +56,4 @@ unset dir_under_source_control
 unset time_of_backup
 unset save_message
 unset latest_sha
-unset current_branch
+unset head_branch
