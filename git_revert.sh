@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Author: Simon Rydell
 # Date: 1 May 2018
 #
-# Restore backup of directory in $1 using git.
+# Restore latest backup of directory in $1 using git.
 # Backups are stored in a private git repository
 
 # Check that input is a directory
