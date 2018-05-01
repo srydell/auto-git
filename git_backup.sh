@@ -8,7 +8,7 @@
 
 # Check that there is only one input
 # and that it is a directory
-if [ "$#" -ne 1 ] && [ -d "$1" ]; then
+if [ -d "$1" ]; then
 	dir_under_source_control="$1"
 else
 	printf "Input was not a directory. Given: %s" "%1"
