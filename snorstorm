@@ -7,28 +7,28 @@
 # Backups are stored in a private git repository
 
 # Change to the right directory
-cd $HOME/Dokument/Forskning
+cd "$HOME/Dokument/Forskning" || exit
 
 # Get the latest commit hash
-latestSHA=$(git log | head -n1 | sed 's/^commit //')
+latest_sha=$(git log | head -n1 | sed 's/^commit //')
 
 # Get the current time
 # Format: YYYY-MM-DD_HH-mm-ss
-TIMEOFBACKUP=$(date +%x_%H-%M-%S)
+time_of_backup=$(date +%x_%H-%M-%S)
 
 # This will be the branch name AND the commit message on that branch
-SAVEMESSAGE="Saved_state_from_$TIMEOFBACKUP"
+save_message="Saved_state_from_$time_of_backup"
 
 # Create a branch where we will save what we want to revert from
-# It is garanteed to be unique due to $TIMEOFBACKUP
-git checkout -b "$SAVEMESSAGE"
+# It is garanteed to be unique due to $time_of_backup
+git checkout -b "$save_message"
 
 # Save what we will revert from
 git add .
-git commit -m "$SAVEMESSAGE"
+git commit -m "$save_message"
 
 # Push our saved state
-git push --set-upstream origin "$SAVEMESSAGE"
+git push --set-upstream origin "$save_message"
 
 # Go back to master branch
 git checkout master
@@ -36,9 +36,9 @@ git checkout master
 # Revert back to the latest commit before save. 
 # NOTE: On its own this is dangerous,
 #	here it's safe since we trust the previous save
-git reset --hard $latestSHA
+git reset --hard $latest_sha
 
 # Free up the variable names
-unset TIMEOFBACKUP
-unset latestSHA
-unset SAVEMESSAGE
+unset time_of_backup
+unset latest_sha
+unset save_message
