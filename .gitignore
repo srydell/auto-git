@@ -9,5 +9,6 @@
 # !exampleFile.txt
 # !exampleDir/
 
+!README.md
 !git_backup.sh
 !git_revert.sh
