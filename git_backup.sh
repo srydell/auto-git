@@ -3,7 +3,7 @@
 # Author: Simon Rydell
 # Date: 1 May 2018
 #
-# Store backup of directory in $1 using git.
+# Store backup of directory $1 on server using git.
 # Backups are stored in a private git repository
 
 # Check that input is a directory
