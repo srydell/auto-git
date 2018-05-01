@@ -58,7 +58,7 @@ My sister is starting her PhD in a field where she usually does not have to inte
 
 ### Appendix ###
 
-Here is a small wrapper for `git_revert.sh` to be placed somewhere in your PATH.
+Here is a small wrapper for `git_revert.sh` that can be placed in your `PATH` variable.
 
 ```bash
 #!/bin/bash
