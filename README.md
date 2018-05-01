@@ -61,7 +61,7 @@ My sister is starting her PhD in a field where she usually does not have to inte
 Here is a small wrapper for `git_revert.sh` that can be placed in your `PATH` variable.
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Wrapper around git_revert.sh for one directory
 # Restore backup of directory $dir_under_source_control
