@@ -9,8 +9,8 @@
 # Log the time of the push
 TIMEOFBACKUP=$(date +%c)
 
-# Change to the right directory
-cd $HOME/Dokument/Forskning
+# Change to the right directory (exit if failed)
+cd "$HOME/Dokument/Forskning" || exit
 
 if [[ "$(git status --porcelain)" ]]; then
     # Changes have been made
