@@ -11,7 +11,7 @@
 if [ -d "$1" ]; then
 	dir_under_source_control="$1"
 else
-	printf "Input was not a directory. Given: %s" "%1"
+	printf "Input was not a directory. Given: %s" "$1"
 	exit 1
 fi
 
