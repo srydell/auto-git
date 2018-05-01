@@ -48,6 +48,7 @@ git checkout master
 git reset --hard "$latest_sha"
 
 # Free up the variable names
+unset dir_under_source_control
 unset time_of_backup
 unset latest_sha
 unset save_message
