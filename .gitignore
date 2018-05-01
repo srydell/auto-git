@@ -10,4 +10,4 @@
 # !exampleDir/
 
 !git_backup.sh
-!snorstorm
+!git_revert.sh
