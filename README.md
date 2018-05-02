@@ -27,7 +27,7 @@ $ git init
 
 Connect it to Github by [creating a new repository](https://help.github.com/articles/create-a-repo/).
 
-Generate a key pair to store on the server. Instructions depend on OS so I refer to the [Github Help pages](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/).
+[Generate a key pair](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) to store on the server. 
 
 ### Installing ###
 
