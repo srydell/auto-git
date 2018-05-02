@@ -1,6 +1,6 @@
 # Automatic Git Backup #
 
-An easy way of getting lazy automatic time stamped git screenshots of a directory through crontab.
+An easy way of getting automatic time stamped git screenshots of a directory through crontab.
 
 ## Getting Started ##
 
