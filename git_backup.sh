@@ -37,5 +37,5 @@ if [[ "$(git status --porcelain)" ]]; then
 fi
 
 # Free up the variable names
-unset dir_under_source_control
 unset time_of_backup
+unset dir_under_source_control
