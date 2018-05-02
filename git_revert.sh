@@ -51,7 +51,7 @@ git checkout "$head_branch"
 #	here it's safe since we trust the previous save
 git reset --hard "$latest_sha"
 
-# Free up the variable names
+# Free up the variable names in reverse order
 unset head_branch
 unset latest_sha
 unset save_message

@@ -15,16 +15,16 @@ else
 	exit 1
 fi
 
-# Change to the right directory (exit if failed)
-cd "$dir_under_source_control" || exit
-
-# Log the time of the push
-# Format depends on locale
-# Example: tis 1 maj 2018 16:15:49
-time_of_backup=$(date +%c)
-
 if [[ "$(git status --porcelain)" ]]; then
 	# Changes have been made
+
+	# Change to the right directory (exit if failed)
+	cd "$dir_under_source_control" || exit
+
+	# Log the time of the push
+	# Format depends on locale
+	# Example: tis 1 maj 2018 16:15:49
+	time_of_backup=$(date +%c)
 
 	# Add the changed files
 	git add .
@@ -34,8 +34,8 @@ if [[ "$(git status --porcelain)" ]]; then
 
 	# Push the change to the remote server
 	git push
-fi
 
-# Free up the variable names
-unset time_of_backup
-unset dir_under_source_control
+	# Free up the variable names in reverse order
+	unset time_of_backup
+	unset dir_under_source_control
+fi
