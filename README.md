@@ -1,6 +1,6 @@
 # Automatic Git Backup #
 
-A smooth way of getting automatic time stamped git screenshots of a directory through crontab.
+An easy way of getting lazy automatic time stamped git screenshots of a directory through crontab.
 
 ## Getting Started ##
 
@@ -25,7 +25,7 @@ $ mkdir important_dir && cd important_dir
 $ git init
 ```
 
-Connect it to Github by following [this](https://help.github.com/articles/create-a-repo/).
+Connect it to Github by [creating a new repository](https://help.github.com/articles/create-a-repo/).
 
 Generate a key pair to store on the server. Instructions depend on OS so I refer to the [Github Help pages](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/).
 
