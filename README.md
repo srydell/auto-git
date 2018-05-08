@@ -37,7 +37,7 @@ Installing on crontab is as easy as
 $ source=/absolute/path/to/git_backup.sh
 $ target_dir=/absolute/path/to/important_dir
 $ log_file=/absolute/path/to/automatic_git_backup.log
-$ { crontab -l; echo "0 * * * * $source $target_dir > $log_file"; } | crontab -
+$ { crontab -l; echo "0 * * * * $source $target_dir &>$log_file"; } | crontab -
 ```
 
 This will run the script once every hour (at \*\*:00), every time the computer is on. Note that `automatic_git_backup.log` does not need to exist beforehand. Testing to make sure it works is as simple as checking the logfile after the script has executed once.
