@@ -15,7 +15,7 @@ These instructions will get you a directory that is under automatic source contr
 Clone the repository wherever you keep custom scripts (I recommend `~/bin`)
 
 ```bash
-$ git clone https://github.com/srydell/automatic_git_backup.git
+$ git clone https://github.com/srydell/auto-git.git
 ```
 
 Create a directory and initialize it with git.
@@ -36,11 +36,11 @@ Installing on crontab is as easy as
 ```bash
 $ source=/absolute/path/to/git_backup.sh
 $ target_dir=/absolute/path/to/important_dir
-$ log_file=/absolute/path/to/automatic_git_backup.log
+$ log_file=/absolute/path/to/auto-git.log
 $ { crontab -l; echo "0 * * * * $source $target_dir &>$log_file"; } | crontab -
 ```
 
-This will run the script once every hour (at \*\*:00), every time the computer is on. Note that `automatic_git_backup.log` does not need to exist beforehand. Testing to make sure it works is as simple as checking the logfile after the script has executed once.
+This will run the script once every hour (at \*\*:00), every time the computer is on. Note that `auto-git.log` does not need to exist beforehand. Testing to make sure it works is as simple as checking the logfile after the script has executed once.
 
 ```bash
 $ cat "$log_file"
