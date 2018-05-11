@@ -15,11 +15,11 @@ else
 	exit 1
 fi
 
+# Change to the right directory (exit if failed)
+cd "$dir_under_source_control" || exit
+
 if [[ "$(git status --porcelain)" ]]; then
 	# Changes have been made
-
-	# Change to the right directory (exit if failed)
-	cd "$dir_under_source_control" || exit
 
 	# Log the time of the push
 	# Format depends on locale
